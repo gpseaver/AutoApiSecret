@@ -10,10 +10,9 @@ import json,sys,time
 
 
 
-
-
 path=sys.path[0]+r'/1.txt'
 num1 = 0
+sckey = os.environ["SCKEY"]
 
 def gettoken(refresh_token):
     headers={'Content-Type':'application/x-www-form-urlencoded'
@@ -77,6 +76,7 @@ def main():
             num1+=1
             print('10调用成功'+str(num1)+'次')
             print('此次运行结束时间为 :', localtime)
+            requests.get('https://sc.ftqq.com/' + sckey + '.send?text=此次运行结束时间为 :'+localtime+'10次调用，其中成功'+str(num1)+'次')
     except:
         print("pass")
         pass
