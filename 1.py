@@ -76,7 +76,8 @@ def main():
             num1+=1
             print('10调用成功'+str(num1)+'次')
             print('此次运行结束时间为 :', localtime)
-            req.get('https://sc.ftqq.com/' + sckey + '.send?text=此次运行结束时间为 :'+localtime+'10次调用，其中成功'+str(num1)+'次')
+        if num1==30:
+            req.get('https://sc.ftqq.com/' + sckey + '.send?text=此次运行结束时间为 :'+localtime+' 共30次调用，其中成功'+str(num1)+'次')
     except:
         print("pass")
         pass
